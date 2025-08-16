@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🚢 Maritime Flag Requirements</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-ship"></i>
+                    <h1>Maritime Flag Requirements</h1>
+                </div>
+                <div class="header-subtitle">
+                    STCW & MLC Training Requirements Database
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-grid">
+                    <div class="search-box">
+                        <label for="flag-select">🏴 Select Flag State</label>
+                        <select id="flag-select" class="form-select">
+                            <option value="">Choose a flag...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-box">
+                        <label for="rank-select">👨‍✈️ Select Rank</label>
+                        <select id="rank-select" class="form-select">
+                            <option value="">Choose a rank...</option>
+                        </select>
+                    </div>
+                    
+                    <div class="search-box">
+                        <label for="requirement-search">🔍 Search Requirements</label>
+                        <input type="text" id="requirement-search" class="form-input" 
+                               placeholder="e.g., Medical Certificate, CEC, GMDSS...">
+                    </div>
+                    
+                    <div class="search-actions">
+                        <button id="search-btn" class="btn btn-primary">
+                            <i class="fas fa-search"></i> Search
+                        </button>
+                        <button id="clear-btn" class="btn btn-secondary">
+                            <i class="fas fa-times"></i> Clear
+                        </button>
+                        <button id="compare-btn" class="btn btn-accent">
+                            <i class="fas fa-balance-scale"></i> Compare Flags
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Stats -->
+            <section class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon">🏴</div>
+                        <div class="stat-value" id="total-flags">0</div>
+                        <div class="stat-label">Flag States</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">👨‍✈️</div>
+                        <div class="stat-value" id="total-ranks">0</div>
+                        <div class="stat-label">Ranks</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon">📋</div>
+                        <div class="stat-value" id="total-requirements">0</div>
+                        <div class="stat-label">Requirements</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Results Section -->
+            <section class="results-section" id="results-section" style="display: none;">
+                <div class="results-header">
+                    <h2 id="results-title">Search Results</h2>
+                    <div class="results-summary" id="results-summary"></div>
+                </div>
+                
+                <!-- Single Flag Results -->
+                <div class="results-content" id="single-results">
+                    <div class="requirements-grid" id="requirements-grid"></div>
+                </div>
+                
+                <!-- Comparison Results -->
+                <div class="comparison-content" id="comparison-results" style="display: none;">
+                    <div class="comparison-table-container">
+                        <table class="comparison-table" id="comparison-table">
+                            <thead id="comparison-header"></thead>
+                            <tbody id="comparison-body"></tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Help Section -->
+            <section class="help-section">
+                <div class="help-content">
+                    <h3><i class="fas fa-info-circle"></i> How to Use</h3>
+                    <div class="help-grid">
+                        <div class="help-card">
+                            <div class="help-icon">🎯</div>
+                            <h4>Quick Search</h4>
+                            <p>Select a flag and rank to see all requirements</p>
+                        </div>
+                        <div class="help-card">
+                            <div class="help-icon">🔍</div>
+                            <h4>Find Requirements</h4>
+                            <p>Search for specific certificates like "Medical" or "CEC"</p>
+                        </div>
+                        <div class="help-card">
+                            <div class="help-icon">⚖️</div>
+                            <h4>Compare Flags</h4>
+                            <p>Compare requirements across multiple flag states</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>🚢 Maritime Flag Requirements Database</p>
+                    <p class="footer-note">Based on STCW Convention and MLC 2006 requirements</p>
+                </div>
+                <div class="footer-links">
+                    <span class="footer-disclaimer">
+                        ⚠️ Always verify requirements with official maritime authorities
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Loading Spinner -->
+    <div class="loading-overlay" id="loading-overlay" style="display: none;">
+        <div class="loading-spinner">
+            <i class="fas fa-ship fa-spin"></i>
+            <p>Loading data...</p>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="data/antigua-barbuda.js"></script>
+    <script src="data/azerbaijan.js"></script>
+    <script src="data/bahamas.js"></script>
+    <script src="data/barbados.js"></script>
+    <script src="data/belgium.js"></script>
+    <script src="data/belize.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
